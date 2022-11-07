@@ -8,11 +8,12 @@ edition = "2021"
 [dependencies]
 datafusion = "13"
 tokio = { version = "1.21" }
+deltalake = { optional = true, git = "https://github.com/timvw/delta-rs", branch = "datafusion-13", default-features = false, features = ["datafusion-ext", "s3-rustls"] }
 
 [features]
-delta = []
+delta = ["deltalake"]
 
 [[example]]
 name = "demo"
-path = "examples/demo.rs"
+path = "examples/delta.rs"
 required-features = ["delta"]
