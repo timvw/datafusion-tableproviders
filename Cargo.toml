@@ -12,8 +12,14 @@ deltalake = { optional = true, git = "https://github.com/timvw/delta-rs", branch
 
 [features]
 delta = ["deltalake"]
+postgres = []
 
 [[example]]
-name = "demo"
+name = "delta"
 path = "examples/delta.rs"
 required-features = ["delta"]
+
+[[example]]
+name = "postgres"
+path = "examples/postgres.rs"
+required-features = ["postgres"]
